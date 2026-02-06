@@ -1,0 +1,33 @@
+# ── Godot ──────────────────────────────────────
+# Godot 4+ specific ignores
+.godot/
+.nomedia
+/android/
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# OS Files
+.DS_Store
+
+# ── FMOD ──────────────────────────────────────
+# FMOD Studio cache and user preferences
+/fmod-project/**/.cache/
+/fmod-project/**/*.user
+/fmod-project/**/.unsaved
+
+# Ignore the FMOD addon cache folder
+/[Aa]ddons/fmod/Cache/
+
+# Log files
+fmod_editor.log

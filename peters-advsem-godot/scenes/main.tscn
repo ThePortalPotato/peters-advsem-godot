@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2qd24g04cicd"]
+
+[node name="main" type="Node2D"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Music/Music"
+event_guid = "{37f45647-d148-452e-bea6-8b7ec822cd1d}"
+autoplay = true
