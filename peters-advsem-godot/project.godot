@@ -15,12 +15,14 @@ General/banks_path="res://fmod-project/soundbanks/Desktop"
 [application]
 
 config/name="peters-advsem-godot"
+run/main_scene="uid://c2qd24g04cicd"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
+AudioManager="*res://scenes/AudioManager.tscn"
 
 [editor_plugins]
 
