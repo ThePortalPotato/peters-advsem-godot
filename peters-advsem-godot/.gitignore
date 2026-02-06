@@ -1,3 +1,4 @@
+# ── Godot ──────────────────────────────────────
 # Godot 4+ specific ignores
 .godot/
 .nomedia
@@ -15,3 +16,17 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# OS Files
+.DS_Store
+
+# ── FMOD ──────────────────────────────────────
+# FMOD Studio cache and user preferences
+/fmod-project/**/.cache/
+/fmod-project/**/*.user
+
+# Ignore the FMOD addon cache folder
+/[Aa]ddons/fmod/Cache/
+
+# Log files
+fmod_editor.log
