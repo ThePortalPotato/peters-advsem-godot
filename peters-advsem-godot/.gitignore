@@ -24,6 +24,7 @@ mono_crash.*.json
 # FMOD Studio cache and user preferences
 /fmod-project/**/.cache/
 /fmod-project/**/*.user
+/fmod-project/**/.unsaved
 
 # Ignore the FMOD addon cache folder
 /[Aa]ddons/fmod/Cache/
