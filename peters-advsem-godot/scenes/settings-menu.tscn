@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://bijsxb0127gby"]
+
+[ext_resource type="Theme" uid="uid://cdtmbjn5c0uwf" path="res://assets/Fonts/menu-buttons.tres" id="1_4okyc"]
+[ext_resource type="Script" uid="uid://ok6wngx137p5" path="res://scripts/SettingsController.gd" id="1_t5iw4"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5iw4")
+
+[node name="TransparentFill" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4713753, 0.47137535, 0.47137517, 1)
+
+[node name="Title" type="Label" parent="TransparentFill"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_right = 237.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 121
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Settings" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -102.0
+offset_right = 250.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Volume Sliders" type="GridContainer" parent="Settings"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Master Label" type="Label" parent="Settings/Volume Sliders"]
+layout_mode = 2
+theme = ExtResource("1_4okyc")
+text = "Master"
+horizontal_alignment = 1
+
+[node name="Master Slider" type="HSlider" parent="Settings/Volume Sliders"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="Music Label" type="Label" parent="Settings/Volume Sliders"]
+layout_mode = 2
+theme = ExtResource("1_4okyc")
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Music Slider" type="HSlider" parent="Settings/Volume Sliders"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="SFX Label" type="Label" parent="Settings/Volume Sliders"]
+layout_mode = 2
+theme = ExtResource("1_4okyc")
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFX Slider" type="HSlider" parent="Settings/Volume Sliders"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 10
+ticks_position = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+
+[node name="BackButton" type="Button" parent="Settings/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_4okyc")
+text = "Back"
+
+[connection signal="value_changed" from="Settings/Volume Sliders/Master Slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Volume Sliders/Music Slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Volume Sliders/SFX Slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Settings/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

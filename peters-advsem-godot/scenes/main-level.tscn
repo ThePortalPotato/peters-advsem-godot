@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://vojccqnp7axl"]
+
+[ext_resource type="Script" uid="uid://cr45vao0up6e3" path="res://scripts/GameManager.gd" id="1_acjph"]
+[ext_resource type="Script" uid="uid://dro86forroje7" path="res://scripts/GameStats.gd" id="2_02re4"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_acjph")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_02re4")
+
+[node name="Fish Count" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 24.5
+offset_right = 61.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fish Count"
+
+[node name="Fish Per Second" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 51.5
+offset_right = 61.0
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fish Per Second"
+
+[node name="Shop Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -24.5
+offset_right = 81.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shop"
+
+[connection signal="pressed" from="CanvasLayer/Control/Shop Button" to="." method="_on_shop_button_pressed"]

@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://c4p1cx6bgufxg"]
+
+[node name="ShopMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shop Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -425.0
+offset_right = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_right = -115.0
+offset_bottom = 83.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 55
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="Scroll Container" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -425.0
+offset_top = 75.0
+offset_right = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Upgrade Container" type="VBoxContainer" parent="Scroll Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button2" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button3" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button4" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button5" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button6" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button7" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button8" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button9" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button10" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button11" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button12" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button13" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button14" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button15" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button16" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button17" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button18" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button19" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button20" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button21" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button22" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button23" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button24" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"
+
+[node name="Button25" type="Button" parent="Scroll Container/Upgrade Container"]
+layout_mode = 2
+text = "Test"

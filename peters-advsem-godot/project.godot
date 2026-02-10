@@ -15,14 +15,21 @@ General/banks_path="res://fmod-project/soundbanks/Desktop"
 [application]
 
 config/name="peters-advsem-godot"
-run/main_scene="uid://c2qd24g04cicd"
+run/main_scene="uid://c0nkc3c8lksd1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
-AudioManager="*res://scenes/AudioManager.tscn"
+AudioManager="*res://scenes/audio-manager.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -32,3 +39,4 @@ enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.47950962, 0.62865335, 0.7809043, 1)
