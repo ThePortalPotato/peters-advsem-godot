@@ -7,3 +7,6 @@ var sfx_volume: float = 1.0
 func set_bus_volume(bus_path: String, value: float) -> void:
 	var bus = FmodServer.get_bus(bus_path)
 	bus.set_volume(value)
+
+func playOneshot2D(event_path: String) -> void:
+	FmodServer.play_one_shot(event_path)

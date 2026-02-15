@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 
 func _ready() -> void:
@@ -23,4 +23,5 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 
 func _on_back_button_pressed() -> void:
-	queue_free()
+	hide()
+	AudioManager.playOneshot2D(FMODEvents.BUTTON_CLICK)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c02hsvexjhipl" path="res://scripts/MainMenuController.gd" id="1_u4kki"]
 [ext_resource type="Theme" uid="uid://cdtmbjn5c0uwf" path="res://assets/Fonts/menu-buttons.tres" id="2_hf3n6"]
-[ext_resource type="Texture2D" uid="uid://difm3pqdhfenh" path="res://assets/him_pixel.png" id="2_xg1py"]
+[ext_resource type="Texture2D" uid="uid://difm3pqdhfenh" path="res://assets/Textures/him_pixel.png" id="2_xg1py"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_u4kki")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.752453, 1.1666216, 1.5597305, 0.78431374)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +23,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_xg1py")
 stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_top = 128.0
+offset_right = 408.0
+offset_bottom = 231.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 75
+text = "A Game About Fishing!"
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,19 +55,16 @@ grow_vertical = 2
 [node name="StartButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../OptionsButton")
 theme = ExtResource("2_hf3n6")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("2_hf3n6")
 text = "Settings"
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/Music/Music"
-event_guid = "{37f45647-d148-452e-bea6-8b7ec822cd1d}"
-autoplay = true
 
 [connection signal="pressed" from="ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/OptionsButton" to="." method="_on_options_button_pressed"]
