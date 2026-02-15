@@ -14,10 +14,11 @@ General/banks_path="res://fmod-project/soundbanks/Desktop"
 
 [application]
 
-config/name="peters-advsem-godot"
+config/name="A Game About Fishing"
+config/description="A Game About Fishing is a small idle fishing game."
+config/version="0.1.1"
 run/main_scene="uid://c0nkc3c8lksd1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
