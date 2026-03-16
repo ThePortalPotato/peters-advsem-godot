@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://d1084rmxxfydp"]
+[gd_scene load_steps=2 format=3 uid="uid://d1084rmxxfydp"]
+
+[ext_resource type="Script" uid="uid://b8x3ok7t20mms" path="res://scripts/AudioManager.gd" id="1_4hukf"]
 
 [node name="FmodBankLoader" type="FmodBankLoader"]
 bank_paths = ["res://fmod-project/soundbanks/Desktop/Master.strings.bank", "res://fmod-project/soundbanks/Desktop/Master.bank", "res://fmod-project/soundbanks/Desktop/Music.bank", "res://fmod-project/soundbanks/Desktop/SFX.bank"]
+script = ExtResource("1_4hukf")

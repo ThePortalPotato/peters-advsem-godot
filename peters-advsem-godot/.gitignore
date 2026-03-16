@@ -20,6 +20,9 @@ mono_crash.*.json
 # OS Files
 .DS_Store
 
+# Build outputs
+/builds/
+
 # ── FMOD ──────────────────────────────────────
 # FMOD Studio cache and user preferences
 /fmod-project/**/.cache/
