@@ -28,9 +28,9 @@ func update_ui() -> void:
 func _on_shop_button_toggled(toggled_on: bool) -> void:
 	print("Shop toggled: ", toggled_on)
 	shop.visible = toggled_on
-	AudioManager.playOneshot2D(FMODEvents.BUTTON_CLICK)
+	AudioManager.playOneshot2D(SFXStreams.BUTTON_CLICK)
 
 
 func _on_settings_button_pressed() -> void:
 	settings.visible = !settings.visible
-	AudioManager.playOneshot2D(FMODEvents.BUTTON_CLICK)
+	AudioManager.playOneshot2D(SFXStreams.BUTTON_CLICK)

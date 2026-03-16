@@ -34,9 +34,9 @@ func _on_upgrade_pressed(upgrade_name: String) -> void:
 	else:
 		success = GameManager.buy_upgrade(upgrade_name, upgrade.cost, upgrade.fps)
 	if success:
-		AudioManager.playOneshot2D(FMODEvents.ITEM_PURCHASE)
+		AudioManager.playOneshot2D(SFXStreams.ITEM_PURCHASE)
 	else:
-		AudioManager.playOneshot2D(FMODEvents.ERROR)
+		AudioManager.playOneshot2D(SFXStreams.ERROR)
 	update_button_labels()
 
 func update_button_labels() -> void:

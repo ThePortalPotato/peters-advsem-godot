@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file(main_level)
-	AudioManager.playOneshot2D(FMODEvents.BUTTON_CLICK)
+	AudioManager.playOneshot2D(SFXStreams.BUTTON_CLICK)
 
 
 func _on_options_button_pressed() -> void:
 	options.visible = !options.visible
-	AudioManager.playOneshot2D(FMODEvents.BUTTON_CLICK)
+	AudioManager.playOneshot2D(SFXStreams.BUTTON_CLICK)
