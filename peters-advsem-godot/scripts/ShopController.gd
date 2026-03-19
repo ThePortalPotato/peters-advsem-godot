@@ -18,13 +18,18 @@ var upgrades = {
    	"Tactical Nuke": {"cost": 300000000.0, "fps": 1000000.0},
 }
 
-
 func _ready() -> void:
+	GameManager.prestiged.connect(update_button_labels)
+	GameManager.prestige_upgrade_purchased.connect(update_button_labels)
+	visibility_changed.connect(_on_visibility_changed)
 	for button in %"Upgrade List".get_children():
 		if button is Button:
 			button.pressed.connect(_on_upgrade_pressed.bind(button.name))
 		update_button_labels()
 
+func _on_visibility_changed() -> void:
+	if visible:
+		update_button_labels()
 
 func _on_upgrade_pressed(upgrade_name: String) -> void:
 	var upgrade = upgrades[upgrade_name]
@@ -39,9 +44,11 @@ func _on_upgrade_pressed(upgrade_name: String) -> void:
 		AudioManager.playOneshot2D(SFXStreams.ERROR)
 	update_button_labels()
 
+
 func update_button_labels() -> void:
 	for button in %"Upgrade List".get_children():
 		var upgrade = upgrades[button.name]
 		var count = GameManager.upgrade_count.get(button.name, 0)
 		var cost = upgrade.cost * pow(1.15, count)
-		button.text = "%s - $%s (+%s/s)" % [button.name, GameManager.format_number(cost), GameManager.format_number(upgrade.fps)]
+		var effective_fps = upgrade.fps * GameManager.prestige_mult
+		button.text = "%s - $%s (+%s/s)" % [button.name, GameManager.format_number(cost), GameManager.format_number(effective_fps)]

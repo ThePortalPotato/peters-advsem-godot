@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://vojccqnp7axl"]
+[gd_scene load_steps=7 format=3 uid="uid://vojccqnp7axl"]
 
 [ext_resource type="Script" uid="uid://0gqtbie5ueub" path="res://scripts/MainLevel.gd" id="1_02re4"]
 [ext_resource type="Script" uid="uid://dro86forroje7" path="res://scripts/GameUI.gd" id="2_02re4"]
 [ext_resource type="AudioStream" uid="uid://kekxfq5f6yi7" path="res://audio/music/Music.ogg" id="2_djt6b"]
 [ext_resource type="Texture2D" uid="uid://21p2w33tahmf" path="res://assets/Textures/lake.jpeg" id="2_yyih8"]
 [ext_resource type="Texture2D" uid="uid://dww34qe30r0eb" path="res://addons/gear.svg" id="3_bdrgs"]
+[ext_resource type="Texture2D" uid="uid://b0hwnyy3jvo8c" path="res://addons/gem.svg" id="6_6rdlt"]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_02re4")
@@ -115,5 +116,25 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Prestige Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -519.0
+offset_top = -352.0
+offset_right = -421.0
+offset_bottom = -254.0
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.627451)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0.78431374)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0.78431374)
+icon = ExtResource("6_6rdlt")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="toggled" from="CanvasLayer/Control/Shop Button" to="CanvasLayer/Control" method="_on_shop_button_toggled"]
 [connection signal="pressed" from="CanvasLayer/Control/Settings Button" to="CanvasLayer/Control" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Prestige Button" to="CanvasLayer/Control" method="_on_prestige_button_pressed"]
