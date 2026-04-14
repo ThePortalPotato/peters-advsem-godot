@@ -1,7 +1,10 @@
-[gd_resource type="Theme" format=3 uid="uid://cdtmbjn5c0uwf"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cdtmbjn5c0uwf"]
+
+[ext_resource type="FontFile" uid="uid://cqdi5v0dx8ami" path="res://assets/Fonts/Jersey10-Regular.ttf" id="1_3v023"]
 
 [resource]
-default_font_size = 24
+default_font = ExtResource("1_3v023")
+default_font_size = 50
 MarginContainer/constants/margin_bottom = 0
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
