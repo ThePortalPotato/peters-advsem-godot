@@ -1,11 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://vojccqnp7axl"]
+[gd_scene load_steps=21 format=3 uid="uid://vojccqnp7axl"]
 
 [ext_resource type="Script" uid="uid://0gqtbie5ueub" path="res://scripts/MainLevel.gd" id="1_02re4"]
 [ext_resource type="Script" uid="uid://dro86forroje7" path="res://scripts/GameUI.gd" id="2_02re4"]
-[ext_resource type="AudioStream" uid="uid://kekxfq5f6yi7" path="res://audio/music/Music.ogg" id="2_djt6b"]
-[ext_resource type="Texture2D" uid="uid://21p2w33tahmf" path="res://assets/Textures/lake.jpeg" id="2_yyih8"]
+[ext_resource type="AudioStream" uid="uid://cv8ed5187xowo" path="res://audio/music/Track1.wav" id="2_7wgpl"]
 [ext_resource type="Texture2D" uid="uid://dww34qe30r0eb" path="res://addons/gear.svg" id="3_bdrgs"]
+[ext_resource type="AudioStream" uid="uid://drj64epkxijc8" path="res://audio/music/Track2.wav" id="3_cvmw5"]
+[ext_resource type="Texture2D" uid="uid://cubdixpe3y3mh" path="res://assets/Textures/AdobeStock_129328870.jpeg" id="3_s2kee"]
+[ext_resource type="AudioStream" uid="uid://cvlwyqcu46sol" path="res://audio/music/Track3.wav" id="4_5usra"]
+[ext_resource type="Texture2D" uid="uid://bbfh3wsaempf3" path="res://assets/Textures/Vinyl_Normal.jpg" id="4_tl6x4"]
+[ext_resource type="Script" uid="uid://c7nyyy2leccfc" path="res://scenes/csg_cylinder_3d.gd" id="4_vrglu"]
+[ext_resource type="AudioStream" uid="uid://b66og1rartgh" path="res://audio/music/Track4.wav" id="5_h2e2k"]
 [ext_resource type="Texture2D" uid="uid://b0hwnyy3jvo8c" path="res://addons/gem.svg" id="6_6rdlt"]
+[ext_resource type="AudioStream" uid="uid://2j5l3cke4jm3" path="res://audio/music/Track5.wav" id="6_bdk1c"]
+[ext_resource type="Texture2D" uid="uid://bega1o4quqg5b" path="res://assets/Textures/Button_Normal.png" id="7_s2kee"]
+[ext_resource type="AudioStream" uid="uid://diajp55vhm7w3" path="res://audio/music/Track6.wav" id="7_u8x35"]
+[ext_resource type="Texture2D" uid="uid://c6m0vbvx5hhik" path="res://assets/Textures/Button_Pressed.png" id="8_aqsxy"]
+[ext_resource type="Theme" uid="uid://d3qmrwaq56eg6" path="res://assets/Fonts/Texture-Button-Label.tres" id="9_s2kee"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_mhu1n"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("2_7wgpl")
+stream_1 = ExtResource("3_cvmw5")
+stream_2 = ExtResource("4_5usra")
+stream_3 = ExtResource("5_h2e2k")
+stream_4 = ExtResource("6_bdk1c")
+stream_5 = ExtResource("7_u8x35")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rdlt"]
+albedo_color = Color(0.37176073, 0.20890626, 3.3691526e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrglu"]
+albedo_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+metallic = 0.35
+metallic_specular = 0.9
+normal_enabled = true
+normal_texture = ExtResource("4_tl6x4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl6x4"]
+albedo_color = Color(0.57254905, 0.48235294, 0, 1)
+metallic = 0.74
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_02re4")
@@ -13,21 +47,72 @@ script = ExtResource("1_02re4")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_djt6b")
+stream = SubResource("AudioStreamPlaylist_mhu1n")
 autoplay = true
 bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(0.8392157, 0.8392157, 0.8392157, 0.5882353)
+modulate = Color(0.8392157, 0.8392157, 0.8392157, 0.81960785)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_yyih8")
+texture = ExtResource("3_s2kee")
 expand_mode = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4477539, 0)
+size = Vector3(1, 0.10449219, 1)
+material = SubResource("StandardMaterial3D_6rdlt")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3800626, 0)
+height = 0.020507813
+sides = 16
+material = SubResource("StandardMaterial3D_vrglu")
+script = ExtResource("4_vrglu")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.094547756, 0, 0, 0, 26.211472, 0, 0, 0, 0.09422134, -0.38529068, -0.13154256, -0.16321471)
+height = 0.020507813
+sides = 16
+material = SubResource("StandardMaterial3D_tl6x4")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.012326879, 20.538311, 0.016185146, -0.032442737, -9.653452, 0.0013218069, 0.006745845, -8.895989, 0.03593255, -0.21239889, -0.25940657, -0.2535055)
+height = 0.020507813
+sides = 16
+material = SubResource("StandardMaterial3D_tl6x4")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.33006012, -0.530264, 0, 0.8213403, -0.21308951, 0, 0, 0, 1, 0.07918006, 0.40651184, -0.027916223)
+polygon = PackedVector2Array(0.09299946, 0.5241932, 0.0056271553, 1.0168284, 0.14527136, 0.9981121, 0.67308694, -0.010081053)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_tl6x4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.55759186, -0.69784045, 0.4495665, 0.5432578, 0.7162532, 0.43800953, -0.6276642, -4.1076287e-08, 0.7784842, 1.760213, 3.6073432, 4.66457)
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.47180867, 0.03691939, 0.8809277, -0.016851809, 0.99931794, -0.032855567, -0.8815399, 0.00065631623, 0.47210905, 2.9742703, 1.0020106, -0.68399394)
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -68,10 +153,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -250.5
-offset_right = 227.0
-offset_bottom = -167.5
+offset_left = -229.0
+offset_top = -249.0
+offset_right = 225.0
+offset_bottom = -166.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 8
@@ -80,7 +165,7 @@ text = "Fish Per Second"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Shop Button" type="Button" parent="CanvasLayer/Control"]
+[node name="Shop Button" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,9 +178,26 @@ offset_right = 207.92569
 offset_bottom = 349.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 60
 toggle_mode = true
+texture_normal = ExtResource("7_s2kee")
+texture_pressed = ExtResource("8_aqsxy")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Shop Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_s2kee")
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 70
 text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Settings Button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1

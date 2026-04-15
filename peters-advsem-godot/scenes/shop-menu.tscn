@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4p1cx6bgufxg"]
+[gd_scene load_steps=3 format=3 uid="uid://c4p1cx6bgufxg"]
 
 [ext_resource type="Script" uid="uid://s0qiqxm5bhtc" path="res://scripts/ShopController.gd" id="1_46d4j"]
+[ext_resource type="FontFile" uid="uid://cqdi5v0dx8ami" path="res://assets/Fonts/Jersey10-Regular.ttf" id="2_a8kei"]
 
 [node name="ShopMenu" type="Control"]
 layout_mode = 3
@@ -18,7 +19,8 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -415.0
+offset_left = -434.0
+offset_bottom = -358.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.24313726, 0.24313726, 0.24313726, 0.54901963)
@@ -29,7 +31,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -415.0
+offset_left = -434.0
 offset_bottom = -633.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -40,15 +42,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -322.0
-offset_top = -1.0
-offset_right = -107.0
-offset_bottom = 82.0
+offset_left = -436.0
+offset_top = 1.0
+offset_bottom = 87.0
 grow_horizontal = 0
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_a8kei")
 theme_override_font_sizes/font_size = 55
 text = "Shop"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -56,14 +59,16 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -124.0
-offset_top = 17.0
-offset_right = -10.0
-offset_bottom = 66.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 87.0
 grow_horizontal = 0
 theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_a8kei")
 theme_override_font_sizes/font_size = 16
 text = "Press 'Shift' to 
-buy in Bulk"
+buy 10x at a time"
+vertical_alignment = 1
 
 [node name="Scroll Container" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -71,136 +76,167 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -413.0
+offset_left = -430.0
 offset_top = 94.0
-offset_right = -2.0
-offset_bottom = -9.0
+offset_right = -5.0
+offset_bottom = -358.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Upgrade List" type="VBoxContainer" parent="Scroll Container"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(16.73, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Fresh Bait" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Reel Speed" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Pole Reinforcement" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Extra Bobber" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Protein Shake" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Fishing Buddy" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Fish Sonar" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Buff Arms" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Fishing Net" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Lucky Mullet" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Fishing Boat" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Creatine IV" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Fish Magnet" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Bird Thats Really Good At Catching Fish" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true
 
 [node name="Tactical Nuke" type="Button" parent="Scroll Container/Upgrade List"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_a8kei")
+theme_override_font_sizes/font_size = 16
 text = "Upgrade"
 text_overrun_behavior = 4
 clip_text = true

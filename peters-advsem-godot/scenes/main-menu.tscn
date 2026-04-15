@@ -1,17 +1,17 @@
 [gd_scene load_steps=85 format=3 uid="uid://c0nkc3c8lksd1"]
 
 [ext_resource type="Script" uid="uid://c02hsvexjhipl" path="res://scripts/MainMenuController.gd" id="1_u4kki"]
-[ext_resource type="Theme" uid="uid://cdtmbjn5c0uwf" path="res://assets/Fonts/menu-buttons.tres" id="2_hf3n6"]
+[ext_resource type="Theme" uid="uid://d3qmrwaq56eg6" path="res://assets/Fonts/Texture-Button-Label.tres" id="3_ismwm"]
 [ext_resource type="Texture2D" uid="uid://cctw5fmo38r0s" path="res://assets/Textures/AGameAboutFishing_Logo.png" id="3_xg1py"]
 [ext_resource type="Texture2D" uid="uid://bega1o4quqg5b" path="res://assets/Textures/Button_Normal.png" id="5_ismwm"]
 [ext_resource type="Texture2D" uid="uid://c6m0vbvx5hhik" path="res://assets/Textures/Button_Pressed.png" id="6_nbft7"]
 [ext_resource type="Texture2D" uid="uid://6d7ylxtc0621" path="res://assets/Textures/RotatingFish.png" id="7_nbft7"]
 
-[sub_resource type="Gradient" id="Gradient_ismwm"]
+[sub_resource type="Gradient" id="Gradient_nbft7"]
 colors = PackedColorArray(0, 0, 0.09248299, 1, 0.23183325, 0.45197287, 0.7242508, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nbft7"]
-gradient = SubResource("Gradient_ismwm")
+gradient = SubResource("Gradient_nbft7")
 fill_from = Vector2(0, 0.62305295)
 fill_to = Vector2(0, 0)
 
@@ -598,7 +598,7 @@ theme_override_constants/separation = 29
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../OptionsButton")
-theme = ExtResource("2_hf3n6")
+theme = ExtResource("3_ismwm")
 texture_normal = ExtResource("5_ismwm")
 texture_pressed = ExtResource("6_nbft7")
 stretch_mode = 0
@@ -612,7 +612,7 @@ offset_top = -8.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_hf3n6")
+theme = ExtResource("3_ismwm")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Play"
 horizontal_alignment = 1
@@ -622,7 +622,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../StartButton")
-theme = ExtResource("2_hf3n6")
+theme = ExtResource("3_ismwm")
 texture_normal = ExtResource("5_ismwm")
 texture_pressed = ExtResource("6_nbft7")
 stretch_mode = 0
